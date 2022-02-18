@@ -36,7 +36,6 @@ const Container = styled.div`
 `;
 
 const Wrap = styled.div`
-	z-index: 1;
 	cursor: pointer;
 	border-radius: 10px;
 	border: 3px solid rgba(249, 249, 249, 0.1);

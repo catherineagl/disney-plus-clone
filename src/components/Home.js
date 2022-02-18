@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImgSlider from './ImgSlider';
+import Movies from './Movies';
 import Viewers from './Viewers';
 const PUBLIC = process.env.PUBLIC_URL;
 
@@ -9,6 +10,7 @@ const Home = () => {
 		<Container>
 			<ImgSlider />
 			<Viewers />
+			<Movies />
 		</Container>
 	);
 };
@@ -23,8 +25,7 @@ const Container = styled.main`
 
 	&:before {
 		content: '';
-		/* background: url('${PUBLIC}/images/home-background.png') center center cover
-			no-repeat; */
+		z-index: -1;
 		background: url('${PUBLIC}/images/home-background.png') center center
 			no-repeat;
 		background-size: cover;
