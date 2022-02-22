@@ -61,7 +61,8 @@ const Container = styled.div`
 	margin-top: 30px;
 	display: grid;
 	padding: 30px 0 26px;
-	grid-template-columns: repeat(5, minmax(0, 1fr));
+	//grid-template-columns: repeat(5, minmax(0, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	grid-gap: 25px;
 `;
 
@@ -74,6 +75,7 @@ const Wrap = styled.div`
 	transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 	position: relative;
 	overflow: hidden;
+
 	img {
 		width: 100%;
 		height: 100%;
