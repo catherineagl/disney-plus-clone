@@ -46,7 +46,7 @@ const Container = styled.div`
 `;
 
 const CTA = styled.div`
-	max-width: 650px;
+	max-width: 680px;
 	padding: 80px 40px;
 	width: 90%;
 	display: flex;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -13,9 +12,9 @@ function App() {
 			<Router>
 				<Header />
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/detail" element={<Detail />} />
+					<Route path="/" element={<Login />} />
+					<Route path="/home" element={<Home />} />
+					<Route path="/detail/:id" element={<Detail />} />
 				</Routes>
 			</Router>
 		</div>

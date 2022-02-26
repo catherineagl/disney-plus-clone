@@ -7,7 +7,7 @@ const Viewers = () => {
 		<Container>
 			<Wrap>
 				<img src={`${PUBLIC}/images/viewers-disney.png`} alt="viewer" />
-				<video autoPlay={true} loop muted>
+				<video autoPlay={true} loop muted playsInline={true}>
 					<source
 						src={`${PUBLIC}/videos/1564674844-disney.mp4`}
 						type="video/mp4"
@@ -17,7 +17,7 @@ const Viewers = () => {
 
 			<Wrap>
 				<img src={`${PUBLIC}/images/viewers-pixar.png`} alt="viewer" />
-				<video autoPlay={true} loop muted>
+				<video autoPlay={true} loop muted playsInline={true}>
 					<source
 						src={`${PUBLIC}/videos/1564676714-pixar.mp4`}
 						type="video/mp4"
@@ -26,7 +26,7 @@ const Viewers = () => {
 			</Wrap>
 			<Wrap>
 				<img src={`${PUBLIC}/images/viewers-marvel.png`} alt="viewer" />
-				<video autoPlay={true} loop muted>
+				<video autoPlay={true} loop muted playsInline={true}>
 					<source
 						src={`${PUBLIC}/videos/1564676115-marvel.mp4`}
 						type="video/mp4"
@@ -35,7 +35,7 @@ const Viewers = () => {
 			</Wrap>
 			<Wrap>
 				<img src={`${PUBLIC}/images/viewers-starwars.png`} alt="viewer" />
-				<video autoPlay={true} loop muted>
+				<video autoPlay={true} loop muted playsInline={true}>
 					<source
 						src={`${PUBLIC}/videos/1608229455-star-wars.mp4`}
 						type="video/mp4"
@@ -44,7 +44,7 @@ const Viewers = () => {
 			</Wrap>
 			<Wrap>
 				<img src={`${PUBLIC}/images/viewers-national.png`} alt="viewer" />
-				<video autoPlay={true} loop muted>
+				<video autoPlay={true} loop muted playsInline={true}>
 					<source
 						src={`${PUBLIC}/videos/1564676296-national-geographic.mp4`}
 						type="video/mp4"
