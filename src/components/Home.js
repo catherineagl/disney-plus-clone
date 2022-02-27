@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ImgSlider from './ImgSlider';
 import Viewers from './Viewers';
-import Recommends from './Recommends';
+/* import Recommends from './Recommends';
 import NewDisney from './NewDisney';
 import Originals from './Originals';
-import Trending from './Trending';
+import Trending from './Trending'; */
 
 import db from '../firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMovies } from '../features/movie/movieSlice';
 import { selectUserName } from '../features/user/userSlice';
+import Movies from './Movies';
 
 const PUBLIC = process.env.PUBLIC_URL;
 
@@ -22,7 +23,7 @@ const Home = () => {
 	let originals = [];
 	let trending = [];
 
-	useEffect(() => {
+	/* 	useEffect(() => {
 		db.collection('movies').onSnapshot((snapshot) => {
 			snapshot.docs.map((doc) => {
 				switch (doc.data().type) {
@@ -56,15 +57,26 @@ const Home = () => {
 				})
 			);
 		});
-	}, [userName]);
+	}, [userName]); */
+
+	useEffect(() => {
+		db.collection('movies').onSnapshot((snapshot) => {
+			let tempMovies = snapshot.docs.map((doc) => {
+				return { id: doc.id, ...doc.data() };
+			});
+			dispatch(setMovies(tempMovies));
+		});
+	}, []);
+
 	return (
 		<Container>
 			<ImgSlider />
 			<Viewers />
-			<Recommends />
+			<Movies />
+			{/* 			<Recommends />
 			<NewDisney />
 			<Originals />
-			<Trending />
+			<Trending /> */}
 		</Container>
 	);
 };
@@ -75,7 +87,8 @@ const Container = styled.main`
 	min-height: calc(100vh - 70px);
 	padding: 0 calc(3.5vw + 5px);
 	position: relative;
-	overflow-x: hidden;
+	overflow: hidden;
+	padding-bottom: 2rem;
 
 	&:before {
 		content: '';

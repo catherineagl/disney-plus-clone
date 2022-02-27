@@ -9,7 +9,7 @@ import {
 	setUserLoginDetails,
 	setSignOutState,
 } from '../features/user/userSlice';
-
+import { Link } from 'react-router-dom';
 const PUBLIC = process.env.PUBLIC_URL;
 
 const Header = (props) => {
@@ -67,10 +67,10 @@ const Header = (props) => {
 			) : (
 				<>
 					<NavMenu>
-						<a href="/home">
+						<Link to="/home">
 							<img src={`${PUBLIC}/images/home-icon.svg`} alt="HOME" />
 							<span>HOME</span>
-						</a>
+						</Link>
 						<a>
 							<img src={`${PUBLIC}/images/search-icon.svg`} alt="SEARCH" />
 							<span>SEARCH</span>
@@ -128,7 +128,9 @@ const Logo = styled.img`
 
 const NavMenu = styled.div`
 	display: flex;
-
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 	a {
 		text-decoration: none;
 		color: #fff;

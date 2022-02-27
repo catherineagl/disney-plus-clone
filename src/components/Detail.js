@@ -2,13 +2,18 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import db from '../firebase';
+import { selectMovies } from '../features/movie/movieSlice';
+import { useSelector } from 'react-redux';
 const PUBLIC = process.env.PUBLIC_URL;
 
 const Detail = (props) => {
 	const { id } = useParams();
-	const [detailData, setDetailData] = useState({});
+	const movies = useSelector(selectMovies);
 
-	useEffect(() => {
+	//const [detailData, setDetailData] = useState({});
+	const detailData = movies.find((movie) => movie.id === id);
+	console.log(detailData);
+	/* 	useEffect(() => {
 		db.collection('movies')
 			.doc(id)
 			.get()
@@ -22,7 +27,7 @@ const Detail = (props) => {
 			.catch((error) => {
 				console.log('Error getting document:', error);
 			});
-	}, [id]);
+	}, [id]); */
 
 	return (
 		<Container>
@@ -104,7 +109,7 @@ const Container = styled.div`
 	min-height: calc(100vh-250px);
 	overflow-x: hidden;
 	display: block;
-	top: 72px;
+	top: 0;
 	padding: 0 calc(3.5vw + 5px);
 `;
 
@@ -113,7 +118,7 @@ const Background = styled.div`
 	opacity: 0.8;
 	position: fixed;
 	right: 0px;
-	top: 0px;
+	top: 78px;
 	z-index: -1;
 	img {
 		width: 100vw;
@@ -129,8 +134,7 @@ const ImageTitle = styled.div`
 	display: flex;
 	-webkit-box-pack: start;
 	justify-content: flex-start;
-	margin: 0px auto;
-	height: 30vw;
+	padding-top: 2rem;
 	min-height: 170px;
 	padding-bottom: 24px;
 	width: 100%;
